@@ -1,0 +1,22 @@
+/*=========================================
+16. SAFARI BUGS (flex-wrap)
+Solution: stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
+=========================================== */
+
+.flexblock {
+  &:before, &:after {
+    width: 0;
+  }
+}
+
+.grid {
+  &:before, &:after {
+    width: 0;
+  }
+}
+
+.cta {
+  &:before, &:after {
+    width: 0;
+  }
+}

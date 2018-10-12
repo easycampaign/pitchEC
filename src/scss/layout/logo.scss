@@ -1,0 +1,61 @@
+/*=== 3.1. Logo === */
+
+.logo-default {
+  text-transform: lowercase;
+  a {
+    background: url("../images/logos/LOGO_cor.png") no-repeat 0 0;
+    background-size: 60rem;
+    float: left;
+    height: 20rem;
+    text-indent: -4000px;
+    /*If you remove text-indent and add: */
+    /*padding-left: 6rem;*/
+    vertical-align: middle;
+    width: 60rem;
+  }
+}
+
+.logo-white {
+  text-transform: lowercase;
+  a {
+    background: url("../images/logos/LOGO_branco.png") no-repeat 0 0;
+    background-size: 60rem;
+    float: left;
+    height: 20rem;
+    text-indent: -4000px;
+    /*If you remove text-indent and add: */
+    /*padding-left: 6rem;*/
+    vertical-align: middle;
+    width: 60rem;
+  }
+}
+
+.sigla-default {
+  text-transform: lowercase;
+  a {
+    background: url("../images/logos/SIGLA_cor.png") no-repeat 0 0;
+    background-size: 60rem;
+    float: left;
+    height: 20rem;
+    text-indent: -4000px;
+    /*If you remove text-indent and add: */
+    /*padding-left: 6rem;*/
+    vertical-align: middle;
+    width: 60rem;
+  }
+}
+
+.sigla-white {
+  text-transform: lowercase;
+  a {
+    background: url("../images/logos/SIGLA_branco.png") no-repeat 0 0;
+    background-size: 60rem;
+    float: left;
+    height: 20rem;
+    text-indent: -4000px;
+    /*If you remove text-indent and add: */
+    /*padding-left: 6rem;*/
+    vertical-align: middle;
+    width: 60rem;
+  }
+}

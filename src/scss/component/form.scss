@@ -1,0 +1,216 @@
+/*=========================================
+14. Forms
+=========================================== */
+
+form {
+  text-align: left;
+  + p, input + p, textarea + p {
+    margin-top: .8rem;
+  }
+}
+
+input {
+  &[type='text'], &[type='email'], &[type='tel'], &[type='url'], &[type='search'], &[type='password'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  height: 4.8rem;
+  margin: 0;
+  padding: .7rem;
+  position: relative;
+  width: 100%;
+}
+
+button, select {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  height: 4.8rem;
+  margin: 0;
+  padding: .7rem;
+  position: relative;
+  width: 100%;
+}
+
+input {
+  &[type='radio'], &[type='checkbox'] {
+    height: auto;
+    padding: 4px;
+    width: auto;
+  }
+}
+
+button[type='submit'] {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  padding: .7rem;
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+  width: auto;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 4.8rem;
+  min-width: 16rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  svg {
+    font-size: 2.4rem;
+  }
+  &.radius {
+    border-radius: 2.4rem;
+  }
+}
+
+input.radius {
+  border-radius: 2.4rem;
+}
+
+button, input[type='submit'] {
+  font-weight: 400;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
+.plans .button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.try {
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+fieldset {
+  padding: 2.4rem;
+}
+
+legend {
+  border: 0;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-width: 1px;
+}
+
+a.button:hover, button[type='submit']:hover, input[type='submit']:hover {
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+}
+
+:disabled, button:disabled:hover {
+  cursor: not-allowed;
+}
+
+.user {
+  input {
+    margin-bottom: 0;
+    &[type='email'], &[type='search'], &[type='text'] {
+      width: 100%;
+    }
+  }
+  button, input[type='submit'] {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 500px) {
+  .user input {
+    &[type='email'], &[type='search'], &[type='text'] {
+      float: left;
+      width: 70%;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .user {
+    button, input[type='submit'] {
+      cursor: pointer;
+      width: 30%;
+    }
+  }
+}
+
+/* Buttons/Badges */
+@media (min-width: 500px) {
+  [class*='button'] + [class*='button'] {
+    margin-left: 1.8rem;
+  }
+}
+
+@media (max-width: 499px) {
+  [class*='button'] + [class*='button'] {
+    margin-top: .8rem;
+  }
+}
+
+/*=== App Store Badges === */
+/* Change width and height: 216x64px, 162x48px, 135x40... */
+
+[class*='badge-'] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: .6rem;
+  display: inline-block;
+  height: 40px;
+  line-height: 4rem;
+  text-indent: -4000px;
+  width: 135px;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+@media (min-width: 1024px) {
+  [class*='badge-'] {
+    height: 48px;
+    line-height: 4.8rem;
+    width: 162px;
+  }
+}
+
+@media (min-width: 500px) {
+  [class*='badge-'] + [class*='badge-'] {
+    margin-left: 1.8rem;
+  }
+}
+
+@media (max-width: 499px) {
+  [class*='badge-'] + [class*='badge-'] {
+    margin-top: .8rem;
+  }
+}
+
+.badge-ios {
+  background-image: url("../images/bt-appstore.png");
+}
+
+.badge-android {
+  background-image: url("../images/bt-playstore.png");
+}

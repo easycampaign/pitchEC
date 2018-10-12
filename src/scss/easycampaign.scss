@@ -1,0 +1,49 @@
+/*!
+ * Name: WebSlides
+ * Version: 1.5.0
+ * Date: 2017-09-16
+ * Description: Making HTML presentations easy
+ * URL: https://github.com/webslides/webslides#readme
+ * Credits: @jlantunez, @LuisSacristan, @Belelros
+ */
+@charset "UTF-8";
+
+// Settings
+  @import
+    'settings/var',
+    'settings/colors',
+    'settings/flexbox',
+    'settings/safari_bugs'
+;
+
+// Base
+@import
+	'base/base',
+	'base/basic_grid',
+	'base/reset',
+	'base/typography'
+;
+
+// Components
+@import
+	'component/animations',
+	'component/avatar',
+	'component/cards',
+	'component/cta',
+	'component/curriculum',
+	'component/form',
+  'component/long_form',
+  'component/navbar',
+  'component/quotes',
+  'component/table_content',
+  'component/tables'
+;
+
+// Layout
+@import
+	'layout/header_footer',
+  'layout/logo',
+  'layout/print',
+  'layout/slide_index',
+  'layout/slides'
+;

@@ -1,0 +1,42 @@
+/*=========================================
+12. Avatars - uifaces.com
+=========================================== */
+
+cite img {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+img {
+  &[class*='avatar-'] {
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+  &.avatar-40 {
+    height: 40px;
+    width: 40px;
+  }
+  &.avatar-48 {
+    height: 48px;
+    width: 48px;
+  }
+  &.avatar-56 {
+    height: 56px;
+    width: 56px;
+  }
+  &.avatar-64 {
+    height: 64px;
+    width: 64px;
+  }
+  &.avatar-72 {
+    height: 72px;
+    width: 72px;
+  }
+  &.avatar-80 {
+    height: 80px;
+    width: 80px;
+  }
+}

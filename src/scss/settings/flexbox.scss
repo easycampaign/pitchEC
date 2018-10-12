@@ -1,0 +1,680 @@
+/*===============================================================
+6. Magic blocks with flexbox (Auto-fill & Equal Height)
+Blocks Links li>a = .flexblock.blink (.blink required)
+================================================================= */
+
+.flexblock {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  &:after {
+    clear: both;
+  }
+  &:before {
+    content: '';
+    display: table;
+  }
+  li, &.blink li > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0;
+    padding: 2.4rem;
+    position: relative;
+  }
+  li {
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    text-align: left;
+    -webkit-transition: .3s;
+    transition: .3s;
+    width: 100%;
+    &:hover {
+      -webkit-transform: translateY(-0.2rem);
+      transform: translateY(-0.2rem);
+    }
+  }
+  &.aligncenter li {
+    text-align: center;
+  }
+  &.vertical-align li {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  &.blink li {
+    padding: 0;
+  }
+  li {
+    h2 svg, h3 svg {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .flexblock li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flexblock li {
+    width: 25%;
+  }
+}
+
+h1 + .flexblock, h2 + .flexblock, h3 + .flexblock {
+  margin-top: 3.2rem;
+}
+
+div + {
+  ul, ol {
+    margin-top: 3.2rem;
+  }
+}
+
+.flexblock li {
+  h2, h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 3.2rem;
+    margin-bottom: 0;
+  }
+}
+
+footer .column {
+  h2, h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 3.2rem;
+    margin-bottom: 0;
+  }
+}
+
+.flexblock {
+  li li, &.blink li li {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+[class*='content-'] .flexblock li p {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+}
+
+.content-right .flexblock.features li, .content-left .flexblock.features li {
+  width: 46%;
+}
+
+/*====================================================================
+6.1 Features <ul class="flexblock features">
+====================================================================== */
+
+.flexblock {
+  &.features {
+    > li {
+      border-radius: .4rem;
+      margin-bottom: 4.8rem;
+      width: 100%;
+    }
+    li {
+      h2 {
+        text-transform: uppercase;
+      }
+      span {
+        font-weight: 300;
+      }
+      p {
+        margin: 0;
+        em {
+          display: block;
+        }
+      }
+      span, svg {
+        display: block;
+        font-size: 6.4rem;
+        line-height: 1;
+        margin: 0;
+      }
+      img {
+        width: 6.4rem;
+      }
+      span sup {
+        font-size: 3rem;
+      }
+    }
+  }
+  &.clients {
+    &.blink li > a {
+      padding: 0;
+    }
+    li {
+      padding: 0;
+      figcaption {
+        padding: 0 2.4rem 2.4rem;
+      }
+    }
+    &.border li figcaption {
+      padding-top: 2.4rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .flexblock.features li {
+    span, svg, img {
+      float: left;
+      margin-right: .8rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .flexblock.features {
+    margin-left: -2%;
+    margin-right: -2%;
+    > li {
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 29%;
+    }
+  }
+  .size-50 .flexblock.features > li {
+    width: 46%;
+  }
+  .column .flexblock.features > li {
+    width: 100%;
+  }
+  footer .flexblock.features > li {
+    margin-bottom: 0;
+  }
+}
+
+/*=====================================================================
+6.2 Clients Logos <ul class="flexblock clients">
+======================================================================= */
+
+.clients {
+  &.blink li > a {
+    -webkit-box-pack: inherit;
+    -ms-flex-pack: inherit;
+    justify-content: inherit;
+  }
+  li {
+    -webkit-box-pack: inherit;
+    -ms-flex-pack: inherit;
+    justify-content: inherit;
+    img, svg {
+      display: block;
+      padding: 2.4rem;
+    }
+  }
+  &.border li {
+    img, svg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  li:hover {
+    z-index: 1;
+  }
+}
+
+/*==================================================
+6.3 flexblock.steps <ul class="flexblock steps">
+About, Philosophy...
+=================================================== */
+
+.steps li {
+  width: 100%;
+  img {
+    display: block;
+    margin: 0 auto .8rem;
+  }
+  span {
+    display: block;
+    margin: 0 auto .8rem;
+    font-size: 6.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .steps li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps li {
+    width: 25%;
+  }
+  .process {
+    border-left-style: solid;
+    border-left-width: 15px;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 60px;
+    width: 0;
+  }
+}
+
+/*=================================================
+6.4 Block Numbers - <ul class="flexblock metrics">
+=================================================== */
+
+.metrics li {
+  text-align: center;
+  width: 100%;
+  strong {
+    display: block;
+  }
+  span, svg {
+    display: block;
+    font-size: 6.4rem;
+    line-height: 7.2rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 568px) {
+  .metrics li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .metrics li {
+    width: 25%;
+  }
+}
+
+.card-50 .metrics li {
+  width: 50%;
+}
+
+/*=====================================================
+6.5 Specs/Items: <ul class="flexblock specs">
+======================================================= */
+
+.specs li {
+  text-align: left;
+  width: 100%;
+  &:after {
+    bottom: -2.4rem;
+    content: '';
+    display: block;
+    height: 1px;
+    position: relative;
+  }
+  &:hover {
+    -webkit-transform: translateX(0.2rem);
+    transform: translateX(0.2rem);
+  }
+  span, svg {
+    display: block;
+    font-size: 6.4rem;
+    line-height: 1;
+    margin: 0;
+  }
+  img {
+    width: 6.4rem;
+  }
+  span {
+    font-weight: 300;
+    sup {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .specs li {
+    span, svg, img {
+      float: left;
+      margin-right: 2.4rem;
+    }
+  }
+}
+
+/*=================================================
+6.6 Reasons/Why/Numbers (counter-increment)
+<ul class="flexblock reasons">
+=================================================== */
+
+.flexblock {
+  &.reasons li {
+    counter-increment: list;
+    text-align: left;
+    width: 100%;
+    &:hover {
+      -webkit-transform: translateY(-0.2rem);
+      transform: translateY(-0.2rem);
+    }
+    &:after {
+      bottom: -2.4rem;
+      content: '';
+      display: block;
+      height: 1px;
+      position: relative;
+    }
+    &:before {
+      content: counter(list) ".";
+      font-size: 6.4rem;
+      line-height: 1;
+    }
+  }
+  &.gallery li {
+    margin-bottom: 4.8rem;
+    &:nth-child(n+4) {
+      -webkit-box-flex: inherit;
+      -ms-flex: inherit;
+      flex: inherit;
+    }
+    figcaption {
+      padding: 1.6rem;
+      position: relative;
+      &:before {
+        content: '';
+        height: 0;
+        left: 20%;
+        margin-left: -.5em;
+        position: absolute;
+        top: .4rem;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transition: .1s;
+        transition: .1s;
+        width: 0;
+      }
+    }
+    &:hover figcaption:before {
+      top: .3rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .flexblock.reasons li {
+    padding-left: 8.8rem;
+    /* You need two digits? (1-10)*/
+    /*padding-left: 12rem; */
+    &:before {
+      left: 2.4rem;
+      position: absolute;
+    }
+  }
+}
+
+/*=================================================
+6.7 Gallery - <ul class="flexblock gallery">
+Block Thumbnails li+.overlay+image
+img size recommended:800x600px
+=================================================== */
+
+.aligncenter .flexblock.gallery li figcaption:before {
+  left: 55%;
+  margin-left: 0;
+}
+
+.flexblock.gallery {
+  li, &.blink li > a {
+    padding: 0;
+  }
+  h2 {
+    text-transform: uppercase;
+    + p {
+      margin-top: .8rem;
+    }
+  }
+  h3 + p {
+    margin-top: .8rem;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 0;
+  }
+  li {
+    footer {
+      margin-top: .8rem;
+      padding: 1.2rem 0 0;
+      position: relative;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .flexblock.gallery {
+    margin-left: -2%;
+    margin-right: -2%;
+    li {
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 46%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .flexblock.gallery li {
+    width: 21%;
+  }
+  .grid {
+    &.sm .flexblock.gallery li, &.ms .flexblock.gallery li {
+      width: 29%;
+    }
+    &.sms .flexblock.gallery li {
+      width: 46%;
+    }
+  }
+}
+
+.overlay {
+  bottom: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  width: 100%;
+  z-index: 2;
+}
+
+li .overlay {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  h2 {
+    letter-spacing: .2rem;
+    margin: 0;
+    padding: 0 2.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+}
+
+.overlay {
+  p, time {
+    margin-bottom: 0;
+  }
+}
+
+li:hover .overlay {
+  cursor: pointer;
+}
+
+/*===============================================
+6.8 Plans / Pricing <ul class="flexblock plans">
+================================================= */
+
+.flexblock {
+  &.plans {
+    > li {
+      border-radius: 3px;
+      margin-bottom: 4.8rem;
+      text-align: center;
+      z-index: 1;
+    }
+    li {
+      padding: 0;
+    }
+    &.blink li > a {
+      padding: 0;
+      div {
+        padding-bottom: 3.2rem;
+      }
+    }
+    li {
+      div {
+        padding-bottom: 3.2rem;
+      }
+      p {
+        padding: .8rem 3.2rem;
+      }
+      h2 {
+        padding: .8rem 3.2rem;
+        float: left;
+        font-weight: 400;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+    .price {
+      clear: both;
+      display: block;
+      font-size: 4.8rem;
+      font-weight: 400;
+      line-height: 6.2rem;
+      padding: 2.4rem;
+      sup {
+        font-size: 1.8rem;
+        margin-right: .4rem;
+      }
+      li ul {
+        margin-bottom: 2.4rem;
+      }
+    }
+    li ul li {
+      display: block;
+      padding: .8rem 3.2rem;
+      text-align: left;
+      width: 100%;
+    }
+  }
+  &.activity {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    li {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      position: relative;
+      width: auto;
+    }
+    p {
+      margin-bottom: 0;
+      vertical-align: top;
+    }
+    img {
+      display: block;
+    }
+    .year, .title {
+      display: inline;
+      font-weight: 600;
+    }
+    .summary {
+      width: 100%;
+    }
+    .title {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .flexblock.plans {
+    margin-left: -2%;
+    margin-right: -2%;
+    > li {
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 29%;
+      &:hover, &:nth-child(2) {
+        position: relative;
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+        z-index: 2;
+      }
+    }
+    &:hover li:nth-child(2):not(:hover) {
+      position: relative;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      z-index: 1;
+    }
+  }
+}
+
+/*===========================================
+6.9 Block Activity <ul class="activity">
+CV / News
+============================================= */
+
+@media (min-width: 768px) {
+  .flexblock.activity {
+    p {
+      float: left;
+    }
+    .year {
+      width: 15%;
+    }
+    .title {
+      margin-left: 4%;
+      margin-right: 4%;
+      width: 27%;
+    }
+    .summary {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+/*=== 1.4. Basic Grid (Flexible blocks)
+Auto-fill & Equal height === */
+
+.grid {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  &:after {
+    clear: both;
+  }
+  &:before {
+    content: '';
+    display: table;
+  }
+  > .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 2.4rem;
+    position: relative;
+    -webkit-transition: .3s;
+    transition: .3s;
+    width: 100%;
+  }
+  &.vertical-align .column {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    > .column {
+      width: 25%;
+    }
+    &.sm .column {
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 70%;
+      }
+    }
+    &.ms .column {
+      &:nth-child(1) {
+        width: 70%;
+      }
+      &:nth-child(2) {
+        width: 30%;
+      }
+    }
+    &.sms .column:nth-child(2) {
+      width: 50%;
+    }
+  }
+}

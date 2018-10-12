@@ -1,0 +1,189 @@
+/*===========================================
+10. Cards
+============================================= */
+
+[class*='card-'] {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  > a {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: relative;
+  }
+}
+
+.fullscreen [class*='card-'] {
+  min-height: 100vh;
+  > a {
+    min-height: 100vh;
+  }
+}
+
+[class*='card-'] figure {
+  img, iframe {
+    display: block;
+    margin: 0 auto;
+  }
+  figcaption {
+    bottom: 0;
+    font-size: 1.4rem;
+    left: 0;
+    line-height: 2.4rem;
+    padding: .8rem 2.4rem;
+    position: absolute;
+    z-index: 2;
+    svg {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  [class*='card'][class*='bg-'] figure, .fullscreen [class*='card'] figure {
+    max-height: 100%;
+    min-width: 380px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  [class*='card-'][class*='bg-'] figure {
+    img, iframe {
+      height: 100%;
+      left: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+  .fullscreen [class*='card-'] figure {
+    img, iframe {
+      height: 100%;
+      left: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+}
+
+.flex-content, [class*='card'] blockquote {
+  padding: 2.4rem;
+  position: relative;
+}
+
+[class*='card-'] {
+  .flex-content, blockquote {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.flex-content p {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .card-50 {
+    figure, blockquote, .flex-content {
+      width: 50%;
+    }
+  }
+  .card-30 figure {
+    width: 30%;
+  }
+  .card-70 {
+    .flex-content, blockquote {
+      width: 30%;
+    }
+  }
+  .card-40 figure {
+    width: 40%;
+  }
+  .card-60 {
+    .flex-content, blockquote {
+      width: 40%;
+    }
+    figure {
+      width: 60%;
+    }
+  }
+  .card-40 {
+    .flex-content, blockquote {
+      width: 60%;
+    }
+  }
+  .card-70 figure {
+    width: 70%;
+  }
+  .card-30 {
+    .flex-content, blockquote {
+      width: 70%;
+    }
+  }
+  [class*='card'] {
+    &:nth-child(odd) figure {
+      -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+      order: 0;
+    }
+    &:nth-child(even) figure {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+    }
+  }
+  .flex-content, [class*='card'] blockquote {
+    padding: 4.8rem;
+  }
+  .fullscreen [class*='card'] {
+    .flex-content, blockquote {
+      padding: 6.4rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  [class*='card-'] {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    > a {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+      flex-flow: column;
+    }
+  }
+  .card {
+    figure, header {
+      width: 100%;
+    }
+  }
+}

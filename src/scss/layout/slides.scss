@@ -1,0 +1,345 @@
+/*============================================
+5. SLIDES (Full Screen)
+Vertically and horizontally centered
+============================================== */
+/* Fade transition to all slides.
+* = All HTML elements will have those styles.*/
+
+section {
+  * {
+    -webkit-animation: fadeIn .6s ease-in-out;
+    animation: fadeIn .6s ease-in-out;
+  }
+  .background, .light, .dark {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  /*Fullscreen*/
+  /* Prototyping? min-height: 720px (Baseline: 8px = .8rem)*/
+  padding: 2.4rem;
+  /*Fixed/Visible header? padding-top: 12rem; */
+  page-break-after: always;
+  position: relative;
+  word-wrap: break-word;
+}
+
+/*=== Section = Slide === */
+
+.slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  /*Fullscreen*/
+  /* Prototyping? min-height: 720px (Baseline: 8px = .8rem)*/
+  padding: 2.4rem;
+  /*Fixed/Visible header? padding-top: 12rem; */
+  page-break-after: always;
+  position: relative;
+  word-wrap: break-word;
+}
+
+@media (min-width: 1024px) {
+  section, .slide {
+    padding-bottom: 12rem;
+    padding-top: 12rem;
+  }
+}
+
+/*slide with no padding (full card, .embed youtube video...) */
+
+.fullscreen {
+  padding: 0;
+  /* Fixed/Visible header?
+  padding:8.2rem 0 0 0;
+  */
+}
+
+/* slide alignment - top */
+
+.slide-top {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+/* slide alignment - bottom */
+
+.slide-bottom {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+/*== 5.1. Mini container width:50%
+Aligned items [class*="content-"]=== */
+
+[class*='content-'] {
+  position: relative;
+  text-align: left;
+}
+
+.wrap {
+  &[class*='bg-'], &.frame {
+    padding: 4.8rem;
+  }
+}
+
+[class*='content-'] {
+  &[class*='bg-'], &.frame {
+    padding: 4.8rem;
+  }
+}
+
+[class*='align'][class*='bg-'] {
+  padding: 4.8rem;
+}
+
+form[class*='bg-'] {
+  padding: 2.4rem;
+}
+
+[class*='content-'] > [class*='content-'] p {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+}
+
+.content-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  [class*='content-'] {
+    width: 50%;
+    &:after, &:before {
+      content: '';
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  .content-left {
+    float: left;
+  }
+  .content-right {
+    float: right;
+  }
+  [class*='content-'] + {
+    [class*='content-'] {
+      margin-bottom: 4.8rem;
+      padding-left: 2.4rem;
+    }
+    [class*='size-'] {
+      clear: both;
+      margin-top: 6.4rem;
+    }
+  }
+}
+
+/*=== 5.3 Slides - Background Images/Videos === */
+
+.background, [class*='background-'] {
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*=== BG Positions === */
+
+.background {
+  background-position: center;
+  background-size: cover;
+  /*fullscreen video
+    <video class="background-video">
+  */
+}
+
+.background-top {
+  background-position: top;
+  background-size: cover;
+}
+
+.background-bottom {
+  background-position: bottom;
+  background-size: cover;
+}
+
+.background-center {
+  background-position: center;
+}
+
+.background-center-top {
+  background-position: center top;
+}
+
+.background-right-top {
+  background-position: right top;
+}
+
+.background-left-top {
+  background-position: left top;
+}
+
+.background-center-bottom, .background-left-bottom, .background-right-bottom, .background-left, .background-right {
+  background-position: center bottom;
+}
+
+@media (min-width: 1024px) {
+  .background-left-bottom {
+    background-position: left bottom;
+  }
+  .background-right-bottom {
+    background-position: right bottom;
+  }
+  .background-right {
+    background-position: right;
+  }
+  .background-left {
+    background-position: left;
+  }
+}
+
+.background-video {
+  height: 100%;
+  -o-object-fit: fill;
+  object-fit: fill;
+  width: 100%;
+}
+
+/*=== bg image/video overlay === */
+/*-- [class*="bg-"] .background.dark, [class*="bg-"] .embed.dark...  -- */
+
+[class*='bg-'] {
+  .light {
+    opacity: .8;
+  }
+  .dark {
+    opacity: .1;
+  }
+  .background-video.dark {
+    opacity: .5;
+  }
+}
+
+@media (max-width: 1023px) {
+  [class*='background-'] {
+    -webkit-animation: fadeIn ease-in .2;
+    animation: fadeIn ease-in .2;
+    opacity: .2;
+  }
+  .background-video {
+    opacity: .8;
+  }
+}
+
+/*=== Animated Background Image === */
+
+.background.anim {
+  -webkit-animation: anim 80s linear infinite;
+  animation: anim 80s linear infinite;
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 100%;
+  height: 200%;
+}
+
+/*=== Background with a frame === */
+/*<span class="background" style="background-image:url('image.jpg')"></span>
+<span class="background frame"></span>*/
+
+[class*='background'].frame {
+  margin: 2.4rem;
+}
+
+/* === 5.2 Counter / Navigation Slides  === */
+
+#navigation {
+  -webkit-animation: fadeIn 8s;
+  animation: fadeIn 8s;
+  bottom: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  width: 24.4rem;
+  /* hover/visibility */
+  z-index: 4;
+  &:hover {
+    opacity: 1;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+#counter {
+  display: block;
+  line-height: 4.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  width: 10rem;
+  a:hover {
+    padding: .8rem;
+  }
+}
+
+a {
+  &#next, &#previous {
+    border-radius: .4rem;
+    cursor: pointer;
+    font-size: 2.4rem;
+    height: 4rem;
+    padding: .8rem;
+    position: absolute;
+    text-align: center;
+    width: 4rem;
+  }
+  &#next {
+    right: 3.2rem;
+  }
+  &#previous {
+    left: 3.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #navigation {
+    -webkit-animation: fadeIn 6s;
+    animation: fadeIn 6s;
+    background: url("../images/swipe.svg") no-repeat center top;
+    background-size: 4.8rem;
+    a {
+      display: none;
+    }
+  }
+  #counter {
+    display: none;
+  }
+}

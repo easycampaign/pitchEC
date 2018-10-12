@@ -1,0 +1,915 @@
+/*=========================================
+19. Colors
+=========================================== */
+/* -- Disable elastic scrolling/bounce:
+webslides.js will add .ws-ready automatically. Don't worry :) -- */
+
+body {
+  background-color: $c-light;
+  color: $c-dark-gray;
+}
+
+:focus {
+  -webkit-box-shadow: 0 0 2px $c-light-blue;
+  box-shadow: 0 0 2px $c-light-blue;
+}
+
+svg {
+  fill: currentColor;
+}
+
+[class*='bg-'] a, [class*='bg-gradient-'] a {
+  color: $c-blue;
+}
+
+.bg-brown a {
+  color: $c-red;
+}
+
+a, .bg-white a, .bg-light a, .bg-gradient-white a {
+  color: $c-light-blue;
+}
+
+a:hover {
+  color: $c-light-blue;
+}
+
+.flexblock li > a, [class*='bg-'] li > a, [class*='bg-gradient-'] li > a, article header a {
+  color: inherit;
+}
+
+hr {
+  background: radial-gradient(ellipse at center, rgba(0, 20, 80, 0.2) 0, rgba(255, 255, 255, 0) 75%);
+  &:after {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: $c-dark-gray;
+  }
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted $c-light;
+}
+
+mark, ins {
+  background-color: rgba(221, 238, 255, 0.8);
+  color: inherit;
+}
+
+::-moz-selection, ::-webkit-selection, ::selection {
+  background-color: rgba(221, 238, 255, 0.8);
+}
+
+pre {
+  background: $c-white;
+  border: 1px solid rgba(0, 20, 80, 0.1);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 20, 80, 0.04), 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 20, 80, 0.04), 0 4px 16px rgba(0, 0, 0, 0.08);
+  &:hover {
+    -webkit-box-shadow: 0 8px 16px rgba(0, 40, 160, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 16px rgba(0, 40, 160, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+code, [class*='bg-'] pre {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.bg-white code {
+  background: rgba(0, 20, 80, 0.03);
+}
+
+/*================================================
+Slides - Backgrounds <section class="bg-primary">
+================================================== */
+/*3 Corp Colors*/
+
+.bg-primary {
+  background-color: $c-dark-blue;
+}
+
+.bg-secondary {
+  background-color: $c-light-blue;
+}
+
+.bg-light {
+  background-color: $c-light;
+}
+
+.bg-black {
+  background-color: $c-black;
+}
+
+.bg-black-blue {
+  background-color: $c-black-blue;
+}
+
+.bg-blue {
+  background-color: $c-blue;
+}
+
+.bg-gray {
+  background-color: $c-gray;
+}
+
+.bg-green {
+  background-color: $c-green;
+}
+
+.bg-purple {
+  background-color: $c-purple;
+}
+
+.bg-red {
+  background-color: $c-red;
+}
+
+.bg-white {
+  background-color: $c-white;
+}
+
+.bg-facebook {
+  background-color: $c-facebook;
+}
+
+[class*='bg-'] .bg-white {
+  color: $c-dark-gray;
+  text-shadow: none;
+}
+
+/*Font Color*/
+
+.bg-trans-dark, .bg-trans-gradient, .bg-primary, .bg-secondary, .bg-blue, .bg-green, .bg-purple, .bg-red, .bg-facebook, .bg-apple, [class*='bg-black'], [class*='bg-gradient-'] {
+  color: $c-white;
+  text-shadow: 0 1px 0 $c-black-blue;
+}
+
+.bg-light p {
+  color: $c-light-blue;
+}
+
+/*Transparent/Opacity*/
+
+.bg-trans-dark {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.bg-trans-light {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/*Covers/Longforms...*/
+
+.bg-trans-gradient {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(transparent));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+/*Horizontal Gradient*/
+
+.bg-gradient-h {
+  background: linear-gradient(134deg, $c-dark-blue 0, $c-light-blue 100%);
+}
+
+/*Vertical Gradient*/
+
+.bg-gradient-v {
+  background: -webkit-gradient(linear, left bottom, left top, from($c-light-blue), to($c-dark-blue));
+  background: linear-gradient(to top, $c-light-blue 0%, $c-dark-blue 100%);
+}
+
+/*Radial Gradient*/
+
+.bg-gradient-r {
+  background: radial-gradient(ellipse at center, $c-light-blue 0%, $c-dark-blue 100%);
+}
+
+/*White Gradient (vertical)*/
+
+.bg-gradient-white {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $c-light), to($c-white));
+  background: linear-gradient(180deg, $c-light 0, $c-white 100%);
+  color: $c-dark-gray;
+  text-shadow: none;
+}
+
+/*Gray Gradient (horizontal)*/
+
+.bg-gradient-gray {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, $c-light), to($c-gray));
+  background: linear-gradient(90deg, $c-light 0, $c-gray 100%);
+  color: $c-dark-gray;
+  text-shadow: none;
+}
+
+/*Border/Frame*/
+
+.frame {
+  border: 0.8rem solid $c-white;
+}
+
+[class*='background'].frame {
+  border-width: .2rem;
+}
+
+/*Layer/Box Shadow*/
+
+.shadow, .pre {
+  position: relative;
+}
+
+.shadow {
+  &:before, &:after {
+    -webkit-box-shadow: 0 16px 24px rgba(0, 20, 80, 0.3);
+    box-shadow: 0 16px 24px rgba(0, 20, 80, 0.3);
+  }
+}
+
+/*============================
+TYPOGRAPHY
+============================== */
+/* -- Horizontal separator  -- */
+
+.text-separator:before {
+  background-color: rgba(170, 0, 0, 0.8);
+}
+
+/* -- Pull Quote (Right/Left)  -- */
+
+[class*='text-pull-'] {
+  border-top: 4px solid rgba(0, 0, 0, 0.5);
+}
+
+img[class*='text-pull-'], figure[class*='text-pull-'] {
+  border-top: 0;
+}
+
+/* -- Context  -- */
+
+[class*='bg-'] .text-context:before {
+  background-color: $c-white;
+}
+
+.text-context:before, .bg-white .text-context:before {
+  background-color: rgba(0, 20, 80, 0.2);
+}
+
+/* -- Text shadow  -- */
+
+.text-shadow {
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* -- time, ampersands, prepositions (for, of...), symbols...
+[class*='card-'] time,
+h1 span {
+  color: $c-blue;
+}
+
+/* -- <pre> comment  -- */
+
+.code-comment {
+  color: rgba(70, 170, 130, 0.9);
+  text-shadow: none;
+}
+
+/*=========================================
+Header/Nav
+=========================================== */
+
+header[role='banner'] {
+  background-color: $c-white;
+}
+
+.logo a {
+  color: inherit;
+}
+
+nav {
+  &[role='navigation'] li {
+    &.active a {
+      background-color: $c-dark-gray;
+      color: $c-white;
+    }
+    a {
+      background-color: rgba(50, 50, 50, 0.9);
+      color: $c-white;
+      &:hover {
+        background-color: rgba(50, 50, 50, 0.7);
+      }
+    }
+  }
+  li {
+    &.twitter a:hover {
+      background-color: $c-twitter;
+    }
+    &.facebook a:hover {
+      background-color: $c-facebook;
+    }
+    &.linkedin a:hover {
+      background-color: $c-linkedin;
+    }
+    &.dribbble a:hover {
+      background-color: $c-dibbble;
+    }
+    &.github a:hover {
+      background-color: $c-github;
+    }
+    &.email a:hover {
+      background-color: $c-email;
+    }
+  }
+}
+
+/*===================================================
+.flexblock li hover/active
+===================================================== */
+
+.flexblock li.active a, .metrics li:hover, .specs li:hover, .reasons li:hover {
+  background-color: rgba(0, 20, 80, 0.03);
+}
+
+/*=========================================
+Features & Clients List
+=========================================== */
+
+.features li, .clients li {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+[class*='bg-'] {
+  .features li, .clients li {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.features li:hover, .clients li:hover {
+  -webkit-box-shadow: 0 8px 16px rgba(0, 20, 80, 0.02), 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 20, 80, 0.02), 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/*============================
+.flexblock with border
+============================== */
+
+.border {
+  border-bottom: 1px solid rgba(0, 20, 80, 0.1);
+  border-right: 1px solid rgba(0, 20, 80, 0.1);
+  li {
+    border-left: 1px solid rgba(0, 20, 80, 0.1);
+    border-top: 1px solid rgba(0, 20, 80, 0.1);
+  }
+}
+
+.flexblock.border li li {
+  border: 0;
+}
+
+/*===========================================
+flexblock.steps
+============================================= */
+
+.steps li {
+  &:nth-child(1) {
+    background-color: $c-blue;
+  }
+  &:nth-child(2) {
+    background-color: $c-light-blue;
+  }
+  &:nth-child(3) {
+    background-color: $c-dark-blue;
+  }
+  &:nth-child(4) {
+    background-color: $c-black-blue;
+  }
+}
+
+.process {
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+}
+
+.steps {
+  li:hover, &.blink li:hover > a {
+    background-color: $c-light-blue;
+  }
+}
+
+@media (min-width: 1024px) {
+  .process {
+    &.step-2 {
+      border-left-color: $c-blue;
+    }
+    &.step-3 {
+      border-left-color: $c-light-blue;
+    }
+    &.step-4 {
+      border-left-color: $c-dark-blue;
+    }
+  }
+  .steps li:hover + li [class*='step-'] {
+    border-left-color: $c-black-blue;
+  }
+}
+
+/*=========================================================
+Items: You can use for settings, drag&drop, close/delete...
+=========================================================== */
+
+.specs li, .reasons li {
+  &:after {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 20, 80, 0)), color-stop(50%, rgba(0, 20, 80, 0.2)), to(rgba(0, 20, 80, 0)));
+    background: linear-gradient(to right, rgba(0, 20, 80, 0) 0%, rgba(0, 20, 80, 0.2) 50%, rgba(0, 20, 80, 0) 100%);
+  }
+  &:last-child:after {
+    background: none;
+  }
+}
+
+/*=========================================================
+Why/Steps/Motivation/Reasons -  Decimal/Numbers
+=========================================================== */
+
+/*=========================================
+Overlays
+=========================================== */
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+li:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  color: $c-white;
+  text-shadow: 0 1px 0 $c-black;
+  a {
+    color: $c-white;
+    text-shadow: 0 1px 0 $c-black;
+  }
+}
+
+/*=========================================
+Gallery li+.overlay+image
+=========================================== */
+
+.gallery li {
+  background-color: rgba(0, 20, 80, 0.06);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.03);
+  figcaption {
+    background-color: $c-white;
+  }
+}
+
+.flexblock.gallery li:hover {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.gallery li {
+  footer {
+    border-top: 1px solid rgba(0, 20, 80, 0.1);
+  }
+  a {
+    color: $c-dark-gray;
+    text-shadow: none;
+  }
+}
+
+.flesblock.gallery li a footer {
+  color: $c-gray;
+}
+
+/*Arrow */
+
+.gallery li figcaption:before {
+  border: 0.8rem solid $c-black;
+  border-color: transparent transparent $c-white $c-white;
+}
+
+/*=========================================
+Plans / Pricing
+=========================================== */
+
+.plans > li div, .flexblock.plans li:hover div {
+  background-color: $c-white;
+}
+
+.plans {
+  > li {
+    &:hover, &:nth-child(2) {
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &:hover li:nth-child(2):not(:hover) {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  li h2 {
+    background-color: rgba(0, 20, 80, 0.5);
+    color: $c-white;
+  }
+  ul li {
+    border-bottom: 1px solid rgba(0, 20, 80, 0.1);
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  > li > a {
+    color: $c-dark-gray;
+    text-shadow: none;
+  }
+}
+
+/*============================
+Activity/CV/Timeline/News
+============================== */
+
+.activity li {
+  border-top: 0.1rem solid rgba(0, 20, 80, 0.1);
+  &:hover {
+    background-color: rgba(0, 20, 80, 0.02);
+  }
+}
+
+/*=========================================
+Resume/Work/CV/Portfolio
+=========================================== */
+
+.work-label {
+  border-bottom: 1px solid rgba(0, 20, 80, 0.1);
+}
+
+.work li {
+  a {
+    border-bottom: 1px solid rgba(0, 20, 80, 0.1);
+  }
+  &:nth-child(odd) > a {
+    background-color: rgba(0, 20, 80, 0.03);
+  }
+  a:hover {
+    background-color: rgba(0, 20, 80, 0.04);
+  }
+}
+
+/*===========================================
+Clients / Services / Logos...
+============================================= */
+
+.clients.border figcaption {
+  border-top: 1px solid rgba(0, 20, 80, 0.1);
+}
+
+/*====================
+LOGOS
+====================== */
+/* --- Images (black logo/image) --- */
+
+img {
+  &.blacklogo {
+    background: none;
+    -webkit-filter: grayscale(100%) brightness(10%) contrast(100%);
+    filter: grayscale(100%) brightness(10%) contrast(100%);
+  }
+  &.graylogo {
+    -webkit-filter: grayscale(100%) brightness(10%) contrast(10%);
+    filter: grayscale(100%) brightness(10%) contrast(10%);
+  }
+  &.whitelogo {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* --- Images (gray logo/image) --- */
+
+/* --- Images (white Logo/Image) --- */
+
+/* --- Logo/Images Hover --- */
+
+li:hover img {
+  &.blacklogo, &.graylogo {
+    background: none;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+  }
+}
+
+img {
+  &.blacklogo:hover, &.graylogo:hover {
+    background: none;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+  }
+}
+
+/*=========================================================
+Cards
+=========================================================== */
+
+[class*='card-'] > a {
+  color: inherit;
+}
+
+/* ---  card ul specs --- */
+
+.description > li {
+  border-bottom: 1px solid rgba(0, 20, 80, 0.1);
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+/*== Figure Background === */
+
+[class*='card-'][class*='bg-'] figure {
+  background-color: rgba(0, 20, 80, 0.06);
+}
+
+/*== Ficaption Cards === */
+
+[class*='card'] figcaption {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  color: $c-white;
+  a {
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2)));
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    color: $c-white;
+  }
+}
+
+/*===CTA (Call to Action - Numbers, Price, Promo...)  ===== */
+@media (min-width: 768px) {
+  .cta .benefit {
+    -o-border-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent) 1 100%;
+    border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(0, 0, 0, 0.4)), to(transparent)) 1 100%;
+    border-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent) 1 100%;
+    border-left-width: 1px;
+    border-style: solid;
+  }
+}
+
+/*=========================================
+Tables
+=========================================== */
+
+table td, th {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+thead {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+tr {
+  &:nth-child(even) > td {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  > td {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+
+td:hover, tr:nth-child(even) > td:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*============================
+Browser (Screenshots)
+============================== */
+
+.browser {
+  border: 1px solid rgba(0, 20, 80, 0.1);
+  &:hover {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  &:before {
+    background-color: rgba(0, 20, 80, 0.1);
+    border-bottom: 1px solid rgba(0, 20, 80, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+  }
+  &:hover:before {
+    background-color: rgba(0, 20, 80, 0.12);
+    color: $c-white;
+  }
+}
+
+/*=== Topbar === */
+
+/*=========================================
+Forms
+=========================================== */
+
+input, textarea {
+  background-color: $c-light;
+}
+
+input:focus, textarea:focus {
+  background-color: $c-white;
+  -webkit-box-shadow: 0 0 5px $c-blue;
+  box-shadow: 0 0 5px $c-blue;
+}
+
+input:focus {
+  &::-moz-placeholder, &::-webkit-input-placeholder {
+    color: $c-gray;
+  }
+}
+
+a.button, [class*='badge-'], button[type='submit'], input {
+  -webkit-box-shadow: 0 10px 16px -8px rgba(0, 20, 80, 0.3);
+  box-shadow: 0 10px 16px -8px rgba(0, 20, 80, 0.3);
+}
+
+button, input, select, textarea, button[type='submit'], input[type='submit'] {
+  border: 1px solid $c-blue;
+}
+
+.button {
+  border: 1px solid $c-blue;
+  &:hover {
+    border: 1px solid $c-blue;
+  }
+}
+
+button[type='submit']:hover, input[type='submit']:hover {
+  border: 1px solid $c-blue;
+}
+
+button[type='submit'], input[type='submit'] {
+  background-color: $c-blue;
+  color: $c-white;
+  text-shadow: 0 1px 0 $c-black-blue;
+}
+
+.button {
+  background-color: $c-blue;
+  color: $c-white;
+  text-shadow: 0 1px 0 $c-black-blue;
+  &:hover {
+    background-color: $c-blue;
+    color: $c-white;
+    text-shadow: 0 1px 0 $c-black-blue;
+  }
+}
+
+button[type='submit']:hover, input[type='submit']:hover {
+  background-color: $c-blue;
+  color: $c-white;
+  text-shadow: 0 1px 0 $c-black-blue;
+}
+
+.button:active, button[type='submit']:active, input[type='submit']:active {
+  background-color: $c-dark-blue;
+}
+
+.ghost {
+  background: none;
+  color: inherit;
+  text-shadow: none;
+  &:hover {
+    background: none;
+    color: inherit;
+    text-shadow: none;
+  }
+}
+
+.bg-primary {
+  select, textarea, .button {
+    border-color: $c-white;
+  }
+  button {
+    border-color: $c-white;
+    &:hover {
+      border-color: $c-white;
+    }
+  }
+  input {
+    border-color: $c-white;
+  }
+}
+
+[class*='bg-gradient-'] .button {
+  border-color: $c-white;
+}
+
+[class*='bg-'] a.button {
+  &.ghost {
+    border-color: $c-white;
+  }
+  color: $c-white;
+}
+
+.bg-white a.button.ghost, .bg-gradient-white a.button.ghost {
+  border: 1px solid $c-blue;
+  color: $c-dark-gray;
+}
+
+:disabled, button:disabled:hover {
+  background-color: $c-light;
+  border-color: $c-light;
+  color: $c-gray;
+}
+
+fieldset {
+  background-color: rgba(0, 20, 80, 0.2);
+  border: 1px solid $c-blue;
+}
+
+legend {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: $c-white;
+}
+
+/* Inputs/Buttons - hover */
+
+input:hover, select:hover {
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* App Store Badges */
+
+[class*='badge-'] {
+  background-color: $c-black;
+  border: 1px solid $c-black-blue;
+}
+
+form .flexblock li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*============================
+Table of Contents
+============================== */
+
+.toc {
+  background-color: $c-light;
+  ol > li:before {
+    background-color: $c-light;
+  }
+}
+
+.chapter {
+  background-color: $c-light;
+}
+
+.toc li .toc-page:before {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.9);
+}
+
+/*============================
+Slides (Counter/Arrows)
+============================== */
+
+#counter, #navigation a {
+  color: $c-blue;
+}
+
+#webslides:hover #navigation a:hover {
+  background-color: rgba(0, 10, 40, 0.8);
+  color: $c-white;
+}
+
+/*============================
+Footer
+============================== */
+
+footer[role='contentinfo'] {
+  background-color: $c-white;
+}
+
+/*============================
+Slides Index
+============================== */
+
+#webslides-zoomed {
+  background: rgba(0, 10, 40, 0.8);
+  .column > .wrap-zoom {
+    background-color: $c-light;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.04);
+    color: $c-dark-gray;
+    &:hover {
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+    &.current {
+      border: 0.6rem solid rgba(0, 20, 255, 0.2);
+    }
+  }
+}
+
+.text-slide-number {
+  color: $c-blue;
+}
