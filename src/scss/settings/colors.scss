@@ -19,7 +19,7 @@ svg {
 }
 
 [class*='bg-'] a, [class*='bg-gradient-'] a {
-  color: $c-blue;
+  color: $c-white;
 }
 
 .bg-brown a {
@@ -111,6 +111,10 @@ Slides - Backgrounds <section class="bg-primary">
   background-color: $c-gray;
 }
 
+.bg-dark-gray {
+  background-color: $c-dark-gray;
+}
+
 .bg-green {
   background-color: $c-green;
 }
@@ -138,7 +142,7 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Font Color*/
 
-.bg-trans-dark, .bg-trans-gradient, .bg-primary, .bg-secondary, .bg-blue, .bg-green, .bg-purple, .bg-red, .bg-facebook, .bg-apple, [class*='bg-black'], [class*='bg-gradient-'] {
+.bg-trans-dark, .bg-trans-gradient, .bg-dark-gray, .bg-primary, .bg-secondary, .bg-blue, .bg-green, .bg-purple, .bg-red, .bg-facebook, .bg-apple, [class*='bg-black'], [class*='bg-gradient-'] {
   color: $c-white;
   text-shadow: 0 1px 0 $c-black-blue;
 }
@@ -651,7 +655,7 @@ Cards
   .cta .benefit {
     -o-border-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent) 1 100%;
     border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(0, 0, 0, 0.4)), to(transparent)) 1 100%;
-    border-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent) 1 100%;
+    border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 1) 50%, transparent) 1 100%;
     border-left-width: 1px;
     border-style: solid;
   }
@@ -873,7 +877,7 @@ Slides (Counter/Arrows)
 ============================== */
 
 #counter, #navigation a {
-  color: $c-blue;
+  color: $c-white;
 }
 
 #webslides:hover #navigation a:hover {

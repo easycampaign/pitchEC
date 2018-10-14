@@ -9,7 +9,8 @@ html, body {
 }
 
 html, body, input, select, textarea {
-  font-family: 'Roboto', 'San Francisco', helvetica, arial, sans-serif;
+  font-family: 'San Francisco';
+  // font-family: 'Roboto', 'San Francisco', helvetica, arial, sans-serif;
   font-size: 62.5%;
 }
 
@@ -275,6 +276,7 @@ h1 [class*='bg-'], h2 [class*='bg-'], h3 [class*='bg-'] {
   font-size: 6.4rem;
   line-height: 8rem;
   margin-bottom: .8rem;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
