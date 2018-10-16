@@ -342,7 +342,7 @@ Features & Clients List
 
 [class*='bg-'] {
   .features li, .clients li {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);;
   }
 }
 
@@ -513,7 +513,7 @@ Plans / Pricing
     box-shadow: none;
   }
   li h2 {
-    background-color: rgba(0, 20, 80, 0.5);
+    background-color: $c-dark-blue;
     color: $c-white;
   }
   ul li {
@@ -757,13 +757,13 @@ button[type='submit'], input[type='submit'] {
 }
 
 .button {
-  background-color: $c-blue;
+  background-color: $c-black;
   color: $c-white;
   text-shadow: 0 1px 0 $c-black-blue;
   &:hover {
-    background-color: $c-blue;
+    background-color: $c-black-blue;
     color: $c-white;
-    text-shadow: 0 1px 0 $c-black-blue;
+    text-shadow: 0 1px 0 $c-blue;
   }
 }
 
