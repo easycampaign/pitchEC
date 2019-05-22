@@ -107,12 +107,6 @@ nav a[rel='external'] em, .hidden {
   z-index: 2;
 }
 
-@media (min-width: 1024px) {
-  .wrap, header nav, footer nav {
-    width: 90%;
-  }
-}
-
 .frame, .shadow {
   padding: 2.4rem;
 }
